@@ -22,7 +22,7 @@ export class UploadService {
                 Body: file?.buffer
             }
 
-            return new Promise(async (resolve, reject) => {
+            return new Promise((resolve, reject) => {
                 this.s3.upload(uploadParams, (err: Error, data: S3.ManagedUpload.SendData) => {
                     if (!err) {
                         resolve(data);
